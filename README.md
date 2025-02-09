@@ -26,7 +26,7 @@ B. Or you can use the link below:<br>
 - Make it responsive for mobile devices.
 
 ## Credits
-This project was created as part of Dr. Angela Yu’s The complete Web Development bootcampcourse.
+This project was created as part of Dr. Angela Yu’s The complete Web Development bootcamp course.
 
 ---
 Thank you!
