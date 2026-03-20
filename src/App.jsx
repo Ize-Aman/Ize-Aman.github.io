@@ -1,18 +1,23 @@
 import React from "react";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home";
+
 import Nav from "./components/nav";
+
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import astronuntUrl from "./Lottie-Files/Astronunt.json?url";
 import nightsky from "./Lottie-Files/myNightSky.json";
 
 const App = () => {
   return (
-    <div className="app-shell">
+    <div>
+      <DotLottieReact data={nightsky} autoplay loop className="fixed scale-145 z-[-1]" />
 
-      <DotLottieReact data={nightsky} autoplay loop className="fixed h-screen w-screen bottom-0" />
-
-      <div className="app-content">
-        {/* <Nav /> */}
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
