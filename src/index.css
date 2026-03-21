@@ -8,14 +8,9 @@
 
 @layer base {
   body {
-    @apply m-0 font-normal bg-background text-foreground;
+    @apply m-0 overflow-x-hidden font-normal text-white;
+    background-color: #031926;
     font-family: "Raleway", serif;
-  }
-  * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    @apply font-sans;
   }
 }
 
@@ -23,13 +18,21 @@
   /* lottie background styles */
   .lottie-bg {
     @apply fixed inset-0 h-screen w-screen pointer-events-none z-[-1];
+    overflow: hidden;
+  }
+
+  .lottie-bg canvas,
+  .lottie-bg svg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
   }
 
   @media (max-width: 639px) {
     .lottie-bg {
       height: 100dvh;
-      transform: scale(1.85);
-      transform-origin: center 22%;
+      transform: scale(1.9);
+      transform-origin: center 18%;
     }
   }
 
@@ -42,11 +45,7 @@
 
   /* navbar styles */
   .nav-wrapper {
-    @apply fixed flex gap-115 bg-[#03192600] py-5 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
-
-    & .logo {
-      @apply text-[26px] text-purple font-extrabold;
-    }
+    @apply fixed flex gap-9 lg:gap-115 bg-[#03192600] py-3.75 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
 
     & .links {
       & ul {
@@ -80,10 +79,24 @@
     & .nav-underline:hover::after {
       transform: scaleX(1);
     }
+
+    @media (max-width: 767px) {
+      @apply hidden;
+    }
+  }
+
+  .logo {
+    @apply text-[26px] text-purple font-extrabold;
   }
 
   .nav-blur {
     @apply bg-[#01111a8d] backdrop-blur-sm duration-650 ease-linear;
+  }
+
+  .card-nav {
+    @media (min-width: 768px) {
+      @apply hidden;
+    }
   }
 
   /* Home page */
@@ -93,9 +106,10 @@
   @apply bg-linear-to-r from-[#9067C6] to-[#a278d8] bg-clip-text text-transparent;
 }
 
+/* shadcn themes and settings */
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
