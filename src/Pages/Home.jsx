@@ -2,7 +2,7 @@ import React from "react"
 
 const Home = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapper pt-18">
             <section id="hello">
                 <h1>Hi there!</h1>
                 <h1>I'm <span className="text-purple">Ammanuel</span></h1>

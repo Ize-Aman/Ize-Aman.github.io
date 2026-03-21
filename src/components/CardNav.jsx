@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 
@@ -15,6 +15,7 @@ const CardNav = ({
   buttonBgColor,
   buttonTextColor
 }) => {
+  const navigate = useNavigate();
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const navRef = useRef(null);
@@ -149,12 +150,24 @@ const CardNav = ({
     tl.reverse();
   };
 
+  const navigateToHref = href => {
+    if (!href) return;
+    handleNavLinkClick();
+
+    if (href.startsWith('/')) {
+      navigate(href);
+      return;
+    }
+
+    window.location.assign(href);
+  };
+
   return (
     <div
       className={`card-nav-container absolute left-0 w-full max-w-none z-[99] md:top-[2em] md:left-1/2 md:w-[90%] md:max-w-[800px] md:-translate-x-1/2 ${className}`}>
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open ' : ''} block h-[60px] p-10 rounded-xl  relative overflow-hidden will-change-[height]`}
+        className={`card-nav ${isExpanded ? 'open ' : ''} block h-[60px] p-8.5 rounded-xl  relative overflow-hidden will-change-[height]`}
         style={{ backgroundColor: baseColor }}>
         <div
           className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
@@ -187,7 +200,16 @@ const CardNav = ({
               key={`${item.label}-${idx}`}
               className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
               ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}>
+              style={{ backgroundColor: item.bgColor, color: item.textColor }}
+              onClick={() => navigateToHref(item.href || item.links?.[0]?.href)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  navigateToHref(item.href || item.links?.[0]?.href);
+                }
+              }}
+              role="link"
+              tabIndex={0}>
               <div
                 className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px]">
                 {item.label}
