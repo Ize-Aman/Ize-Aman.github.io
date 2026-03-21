@@ -28,7 +28,7 @@ const Nav = () => {
     return (
         <div>
             <div className={navbarBlur ? 'nav-blur nav-wrapper' : 'nav-wrapper'}>
-                <Link to={"/"}><h1 className="logo nav-underline">Aman</h1></Link>
+                <Link to={"/"}><h1 className="logo">Aman</h1></Link>
                 <div className="links">
                     <ul>
                         <Link to={"/"}><li className="nav-item nav-underline"><AiOutlineHome className="nav-icon" /> Home </li></Link>

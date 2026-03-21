@@ -14,7 +14,7 @@ import nightsky from "./Lottie-Files/myNightSky.json";
 const App = () => {
   return (
     <div>
-      <DotLottieReact data={nightsky} autoplay loop className="fixed scale-145 z-[-1]" />
+      <DotLottieReact data={nightsky} autoplay loop className="lottie-bg" />
       <Nav />
 
       <Routes>
