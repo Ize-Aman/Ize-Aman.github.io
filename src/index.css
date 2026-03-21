@@ -1,25 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @layer base {
-  .bg-1 {
-    @apply fixed z-[-1] bottom-0;
-  }
-
-  .bg-2 {
-    @apply fixed z-[-1] right-55;
-  }
-
-  .bg-3 {
-    @apply fixed z-[-1] top-[-30px];
+  body {
+    @apply m-0 px-22 font-normal text-white;
+    font-family: "Raleway", serif;
   }
 }
 
 @layer components {
+  /* navbar styles */
   .nav-wrapper {
-    @apply flex;
+    @apply fixed flex gap-130 bg-[#03192600] py-5 font-normal text-[21px];
 
-    .logo {
+    & .logo {
       @apply text-2xl;
     }
+
+    & .links {
+      & ul {
+        @apply flex gap-8;
+      }
+
+      & .nav-item {
+        @apply relative flex cursor-pointer;
+      }
+    }
+
+    & .nav-icon {
+      @apply mr-2 mt-1;
+    }
+
+    & .nav-underline {
+      @apply relative inline-block cursor-pointer;
+    }
+
+    & .nav-underline::after {
+      content: "";
+      @apply absolute left-0 bottom-0 h-[2px] w-full bg-white;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    & .nav-underline:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  .nav-blur {
+    @apply bg-[#031926f8];
   }
 }

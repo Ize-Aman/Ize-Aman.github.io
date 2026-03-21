@@ -1,7 +1,10 @@
 import React from "react";
 
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Resume from "./Pages/Resume";
+import Projects from "./Pages/Projects";
 
 import Nav from "./components/nav";
 
@@ -12,12 +15,14 @@ const App = () => {
   return (
     <div>
       <DotLottieReact data={nightsky} autoplay loop className="fixed scale-145 z-[-1]" />
+      <Nav />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Resume" element={<Resume />} />
+        <Route path="/Projects" element={<Projects />} />
+      </Routes>
     </div>
   );
 };
