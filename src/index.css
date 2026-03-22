@@ -104,7 +104,7 @@
 
   /* Home page */
   #hello {
-    @apply flex flex-col max-w-screen h-screen text-center lg:flex-row items-center justify-evenly;
+    @apply flex flex-col h-screen text-center lg:flex-row items-center justify-evenly;
 
     & .home-text {
       @apply text-left;

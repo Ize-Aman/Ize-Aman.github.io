@@ -15,7 +15,7 @@ const Home = () => {
                 </div>
 
                 <div className="astronunt-frame">
-                    <DotLottieReact className="" data={Astronunt} autoplay loop style={{ width: 300, height: 375 }} />
+                    <DotLottieReact className="" data={Astronunt} autoplay loop style={{ width: 400, height: 375 }} />
                 </div>
             </section>
 
