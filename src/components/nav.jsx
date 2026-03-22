@@ -72,7 +72,7 @@ const Nav = () => {
             </div>
 
             <div className="card-nav">
-                <CardNav className={`fixed ${navbarBlur ? 'nav-blur' : ' backdrop-blur-[0] duration-650 ease-linear'}`}
+                <CardNav className={`fixed ${navbarBlur ? 'backdrop-blur-[0] duration-650 ease-linear nav-blur' : 'backdrop-blur-[0] duration-650 ease-linear'}`}
                     logo={"Aman"}
                     items={items}
                     baseColor="#0000"

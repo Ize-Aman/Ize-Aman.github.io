@@ -15,6 +15,9 @@
 }
 
 @layer components {
+  .wrapper {
+    @apply py-10;
+  }
   /* lottie background styles */
   .lottie-bg {
     @apply fixed inset-0 h-screen w-screen pointer-events-none z-[-1];
@@ -45,7 +48,7 @@
 
   /* navbar styles */
   .nav-wrapper {
-    @apply fixed flex gap-9 lg:gap-115 bg-[#03192600] py-3.75 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
+    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
 
     & .links {
       & ul {
@@ -94,12 +97,23 @@
   }
 
   .card-nav {
-    @media (min-width: 768px) {
+    @media (min-width: 767px) {
       @apply hidden;
     }
   }
 
   /* Home page */
+  #hello {
+    @apply flex flex-col h-screen text-center lg:flex-row items-center justify-evenly;
+
+    & .home-text {
+      @apply text-left;
+    }
+
+    & h1 {
+      @apply text-[30px] min-[500px]:text-[35px] font-semibold text-left;
+    }
+  }
 }
 
 @utility text-purple {

@@ -6,7 +6,7 @@ import About from "./Pages/About";
 import Resume from "./Pages/Resume";
 import Projects from "./Pages/Projects";
 
-import Nav from "./components/nav";
+import Nav from "./components/Nav";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import nightsky from "./Lottie-Files/myNightSky.json";
@@ -15,6 +15,7 @@ const App = () => {
   return (
     <div>
       <DotLottieReact data={nightsky} autoplay loop className="lottie-bg" />
+
       <Nav />
 
       <Routes>
