@@ -104,14 +104,14 @@
 
   /* Home page */
   #hello {
-    @apply flex flex-col h-screen text-center lg:flex-row items-center justify-evenly;
+    @apply flex flex-col h-screen text-center lg:flex-row items-center justify-center lg:justify-evenly;
 
     & .home-text {
       @apply text-left;
     }
 
     & h1 {
-      @apply text-[30px] min-[500px]:text-[35px] font-semibold text-left;
+      @apply text-[30px] min-[500px]:text-[45px] font-bold text-left;
     }
   }
 }

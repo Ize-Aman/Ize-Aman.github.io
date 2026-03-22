@@ -60,7 +60,7 @@ const Nav = () => {
     return (
         <div>
             <div className={`nav-wrapper ${navbarBlur ? 'nav-blur ' : ''}`}>
-                <Link to={"/"}><h1 className="logo">Aman</h1></Link>
+                <Link to={"/"}><h1 className="logo">AT</h1></Link>
                 <div className="links">
                     <ul>
                         <Link to={"/"}><li className="nav-item nav-underline"><AiOutlineHome className="nav-icon" /> Home </li></Link>
@@ -73,7 +73,7 @@ const Nav = () => {
 
             <div className="card-nav">
                 <CardNav className={`fixed ${navbarBlur ? 'nav-blur' : ' backdrop-blur-[0] duration-650 ease-linear'}`}
-                    logo={"Aman"}
+                    logo={"AT"}
                     items={items}
                     baseColor="#0000"
                     menuColor="#000"
