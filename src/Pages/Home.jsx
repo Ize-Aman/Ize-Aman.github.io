@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import Astronunt from "@/Lottie-Files/Astronunt.json"
 import TypeWriter from "@/components/TypeWriter";
 
-import CoffeeGuy from "@/components/CoffeeGuy";
+import Tilt from "@/components/Tilt";
 
 const Home = () => {
     return (
@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <CoffeeGuy />
+            <Tilt image={"./Avatar.png"} width="w-70" />
 
         </div>
     )
