@@ -1,7 +1,8 @@
 import React from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-const Tilt = ({ image, width }) => {
+const Tilt = ({ image, width, data, ...rest }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -34,16 +35,23 @@ const Tilt = ({ image, width }) => {
 
     return (
         <div className="wrapper">
-            <motion.div className="tilt relative inline-block" style={{ perspective: 800 }}>
-                <motion.img
-                    src={image ?? './Avatar.png'}
-                    alt="Coffee avatar"
-                    className={width}
+            <div className="tilt relative inline-block" style={{ perspective: 800 }}>
+                <motion.div
                     style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                />
-            </motion.div>
+                >
+                    {image ? (
+                        <img
+                            src={image ?? "./Avatar.png"}
+                            alt="Tiltable image"
+                            className={width}
+                        />
+                    ) : (
+                        <DotLottieReact data={data} {...rest} />
+                    )}
+                </motion.div>
+            </div>
         </div>
     )
 };

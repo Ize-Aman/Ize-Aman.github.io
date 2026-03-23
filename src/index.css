@@ -13,8 +13,16 @@
     font-family: "Raleway", serif;
   }
 
+  h1 {
+    @apply text-[30px] min-[500px]:text-[45px] font-bold text-left;
+  }
+
+  h2 {
+    @apply text-[30px] min-[500px]:text-[35px] font-semibold text-left;
+  }
+
   p {
-    @apply font-normal text-[18px] leading-7.5;
+    @apply font-medium text-[20px] leading-7.5;
   }
 }
 
@@ -114,9 +122,15 @@
     & .home-text {
       @apply text-left;
     }
+  }
 
-    & h1 {
-      @apply text-[30px] min-[500px]:text-[45px] font-bold text-left;
+  /* About page */
+  #know-me,
+  #skillset {
+    @apply flex flex-col text-center lg:flex-row items-center justify-evenly lg:justify-evenly;
+
+    & .about-text {
+      @apply text-left;
     }
   }
 

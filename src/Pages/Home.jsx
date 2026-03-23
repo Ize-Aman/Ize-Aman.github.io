@@ -17,14 +17,14 @@ const Home = () => {
                     <h1 className="mt-4 text-[21px] sm:text-[25px] font-medium"><TypeWriter strings={['A Software Engineer', 'Full-Stack Developer']} /></h1>
                 </div>
 
-                <div className="astronunt-frame">
+                <div>
                     <DotLottieReact className="" data={Astronunt} autoplay loop style={{ width: 375, height: 375 }} />
                 </div>
             </section>
 
             <section id="brief-intro" className="px-10 lg:px-50 lg:h-[70vh] h-screen">
                 <div className="home-text">
-                    <h1>Brief <span className="text-purple">Introduction</span></h1>
+                    <h2>Brief <span className="text-purple">Introduction</span></h2>
                     <br />
                     <p>I’m a software engineering student who enjoys building applications
                         and solving problems through code. I’m most comfortable with
