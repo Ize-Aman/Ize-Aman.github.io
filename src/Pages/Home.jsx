@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="brief-intro" className="px-10 lg:px-50 lg:h-[70vh]">
+            <section id="brief-intro" className="px-10 lg:px-50 lg:h-[70vh] h-screen">
                 <div className="home-text">
                     <h1>Brief <span className="text-purple">Introduction</span></h1>
                     <p>I’m a software engineering student who enjoys building applications

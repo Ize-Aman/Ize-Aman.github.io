@@ -14,7 +14,7 @@
   }
 
   p {
-    @apply font-medium text-[18px] leading-7.5;
+    @apply font-normal text-[18px] leading-7.5;
   }
 }
 
