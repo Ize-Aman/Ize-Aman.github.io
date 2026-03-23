@@ -27,7 +27,7 @@ const Home = () => {
                     <h1>Brief <span className="text-purple">Introduction</span></h1>
                     <p>I’m a software engineering student who enjoys building applications
                         and solving problems through code. I’m most comfortable with
-                        <span className="text-purple">JavaScript</span>, and recently I’ve been exploring
+                        <span className="text-purple"> JavaScript</span>, and recently I’ve been exploring
                         <span className="text-purple"> modern web development
                         </span> and <span className="text-purple">Game Dev</span>.
                     </p>
@@ -36,8 +36,8 @@ const Home = () => {
 
                     <p>I’m currently focused on strengthening my fundamentals, building meaningful projects,
                         and learning technologies like <span className="text-purple">Next.js</span> and
-                        <span className="text-purple">TypeScript</span> to become a better
-                        <span className="text-purple">full-stack developer</span>.
+                        <span className="text-purple"> TypeScript</span> to become a better
+                        <span className="text-purple"> full-stack developer</span>.
                     </p>
                 </div>
                 <div>
