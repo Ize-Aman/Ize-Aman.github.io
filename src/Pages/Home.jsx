@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="home-text">
                     <h1>Hi there!</h1>
                     <h1>I'M <span className="text-purple">AMMANUEL</span></h1>
-                    <h1 className="mt-4 text-[21px] sm:text-[25px] font-medium"><TypeWriter /></h1>
+                    <h1 className="mt-4 text-[21px] sm:text-[25px] font-medium"><TypeWriter strings={['A Software Engineer', 'Full-Stack Developer']} /></h1>
                 </div>
 
                 <div className="astronunt-frame">
@@ -25,6 +25,7 @@ const Home = () => {
             <section id="brief-intro" className="px-10 lg:px-50 lg:h-[70vh] h-screen">
                 <div className="home-text">
                     <h1>Brief <span className="text-purple">Introduction</span></h1>
+                    <br />
                     <p>I’m a software engineering student who enjoys building applications
                         and solving problems through code. I’m most comfortable with
                         <span className="text-purple"> JavaScript</span>, and recently I’ve been exploring

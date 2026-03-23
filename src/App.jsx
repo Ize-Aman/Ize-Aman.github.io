@@ -7,6 +7,7 @@ import Resume from "./Pages/Resume";
 import Projects from "./Pages/Projects";
 
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import nightsky from "./Lottie-Files/myNightSky.json";
@@ -24,6 +25,8 @@ const App = () => {
         <Route path="/Resume" element={<Resume />} />
         <Route path="/Projects" element={<Projects />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };

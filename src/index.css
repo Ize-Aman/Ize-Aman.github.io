@@ -38,21 +38,21 @@
   @media (max-width: 639px) {
     .lottie-bg {
       height: 100dvh;
-      transform: scale(1.9);
+      transform: scale(1);
       transform-origin: center 18%;
     }
   }
 
   @media (min-width: 640px) {
     .lottie-bg {
-      transform: scale(1.5);
+      transform: scale(1.1);
       transform-origin: center center;
     }
   }
 
   /* navbar styles */
   .nav-wrapper {
-    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
+    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 z-[99] font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
 
     & .links {
       & ul {
@@ -119,6 +119,15 @@
       @apply text-[30px] min-[500px]:text-[45px] font-bold text-left;
     }
   }
+
+  /* Footer */
+  .footer {
+    @apply flex flex-col py-5 items-center gap-1.5 md:flex-row md:justify-around md:px-20;
+
+    & .footer-icons {
+      @apply flex gap-10;
+    }
+  }
 }
 
 @utility text-purple {
@@ -126,7 +135,7 @@
 }
 
 /* shadcn themes and settings */
-@theme inline {
+/* @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -236,4 +245,4 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
+} */
