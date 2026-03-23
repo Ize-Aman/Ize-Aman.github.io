@@ -10,7 +10,7 @@ import Tilt from "@/components/Tilt";
 const Home = () => {
     return (
         <div className="wrapper">
-            <section id="hello">
+            <section id="hello" className="h-screen">
                 <div className="home-text">
                     <h1>Hi there!</h1>
                     <h1>I'M <span className="text-purple">AMMANUEL</span></h1>
@@ -22,7 +22,28 @@ const Home = () => {
                 </div>
             </section>
 
-            <Tilt image={"./Avatar.png"} width="w-70" />
+            <section id="brief-intro" className="px-10 lg:px-50 lg:h-[70vh]">
+                <div className="home-text">
+                    <h1>Brief <span className="text-purple">Introduction</span></h1>
+                    <p>I’m a software engineering student who enjoys building applications
+                        and solving problems through code. I’m most comfortable with
+                        <span className="text-purple">JavaScript</span>, and recently I’ve been exploring
+                        <span className="text-purple"> modern web development
+                        </span> and <span className="text-purple">Game Dev</span>.
+                    </p>
+
+                    <br />
+
+                    <p>I’m currently focused on strengthening my fundamentals, building meaningful projects,
+                        and learning technologies like <span className="text-purple">Next.js</span> and
+                        <span className="text-purple">TypeScript</span> to become a better
+                        <span className="text-purple">full-stack developer</span>.
+                    </p>
+                </div>
+                <div>
+                    <Tilt image={"./Avatar.png"} width="w-55 md:w-70 lg:w-200" />
+                </div>
+            </section>
 
         </div>
     )

@@ -12,6 +12,10 @@
     background-color: #031926;
     font-family: "Raleway", serif;
   }
+
+  p {
+    @apply font-medium text-[18px] leading-7.5;
+  }
 }
 
 @layer components {
@@ -103,8 +107,9 @@
   }
 
   /* Home page */
-  #hello {
-    @apply flex flex-col h-screen text-center lg:flex-row items-center justify-center lg:justify-evenly;
+  #hello,
+  #brief-intro {
+    @apply flex flex-col text-center lg:flex-row items-center justify-center lg:justify-evenly;
 
     & .home-text {
       @apply text-left;
@@ -117,7 +122,7 @@
 }
 
 @utility text-purple {
-  @apply bg-linear-to-r from-[#9067C6] to-[#a278d8] bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-[#9067C6] to-[#a278d8] bg-clip-text text-transparent font-bold;
 }
 
 /* shadcn themes and settings */
