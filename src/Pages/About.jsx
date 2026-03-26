@@ -18,7 +18,7 @@ const About = () => {
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae sequi incidunt, alias facere soluta aliquam eum, quibusdam explicabo perspiciatis quisquam quasi est dolorem animi fugiat illo sed ad consequatur saepe?</p>
                 </div>
                 <div>
-                    <Tilt data={CodingGuy} autoplay loop segment={[1, 22]} speed={0.7} mode="reverse-bounce" className="w-screen h-auto lg:w-100" />
+                    <Tilt data={CodingGuy} autoplay loop segment={[1, 22]} speed={0.7} mode="reverse-bounce" className="w-screen h-100 lg:w-100" />
                 </div>
             </section>
 
