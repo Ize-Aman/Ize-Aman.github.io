@@ -1,12 +1,11 @@
 import React from "react"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import CodingGuy from "@/Lottie-Files/CodingGuy.json"
 import Tilt from "@/components/Tilt";
 
 const About = () => {
     return (
         <div className="wrapper">
-            <section id="know-me" className="px-10 lg:px-35 h-screen not-lg:pt-15">
+            <section id="know-me" className="px-10 lg:px-35 min-h-screen lg:h-screen not-lg:pt-15">
                 <div className="about-text">
                     <h2>Get to <span className="text-purple">Know</span> me!</h2>
                     <br />
@@ -18,7 +17,15 @@ const About = () => {
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae sequi incidunt, alias facere soluta aliquam eum, quibusdam explicabo perspiciatis quisquam quasi est dolorem animi fugiat illo sed ad consequatur saepe?</p>
                 </div>
                 <div>
-                    <Tilt data={CodingGuy} autoplay loop segment={[1, 22]} speed={0.7} mode="reverse-bounce" className="w-screen h-100 lg:w-100" />
+                    <Tilt
+                        data={CodingGuy}
+                        autoplay
+                        loop
+                        segment={[1, 22]}
+                        speed={0.7}
+                        mode="reverse-bounce"
+                        className="w-full max-w-93.75 h-auto lg:w-100"
+                    />
                 </div>
             </section>
 
