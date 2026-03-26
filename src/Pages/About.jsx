@@ -22,7 +22,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] h-screen">
+            <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] min-h-screen">
                 <h2>Professional Skillset</h2>
 
             </section>
