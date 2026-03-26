@@ -18,12 +18,13 @@ const About = () => {
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae sequi incidunt, alias facere soluta aliquam eum, quibusdam explicabo perspiciatis quisquam quasi est dolorem animi fugiat illo sed ad consequatur saepe?</p>
                 </div>
                 <div>
-                    <Tilt data={CodingGuy} autoplay loop segment={[1, 22]} speed={0.7} mode="reverse-bounce" style={{ width: 400, height: 400 }} />
+                    <Tilt data={CodingGuy} autoplay loop segment={[1, 22]} speed={0.7} mode="reverse-bounce" className="w-100 h-100" />
                 </div>
             </section>
 
             <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] h-screen">
                 <h2>Professional Skillset</h2>
+
             </section>
         </div>
     )
