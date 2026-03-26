@@ -35,7 +35,7 @@ const Tilt = ({ image, width, data, ...rest }) => {
 
     return (
         <div className="wrapper">
-            <div className="tilt relative inline-block" style={{ perspective: 800 }}>
+            <div className="tilt relative block" style={{ perspective: 800 }}>
                 <motion.div
                     style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
                     onMouseMove={handleMouseMove}
