@@ -60,7 +60,7 @@
 
   /* navbar styles */
   .nav-wrapper {
-    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 z-[99] font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
+    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 z-99 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
 
     & .links {
       & ul {
@@ -125,12 +125,26 @@
   }
 
   /* About page */
-  #know-me,
-  #skillset {
+  #know-me {
     @apply flex flex-col text-center lg:flex-row items-center justify-evenly lg:justify-evenly;
 
     & .about-text {
       @apply text-left;
+    }
+  }
+
+  /* about page skills section */
+  #skillset {
+    @apply flex flex-col text-center items-center justify-evenly lg:justify-evenly;
+  }
+  .skill-wrapper {
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4.75 mt-6;
+  }
+  .skill-box {
+    @apply border-[3px] border-[#431f47] rounded-[5px] p-6 sm:p-7 md:p-8 lg:p-10 flex items-center justify-center;
+
+    & svg {
+      @apply size-13.5 sm:size-13.5 md:size-14 lg:size-15;
     }
   }
 

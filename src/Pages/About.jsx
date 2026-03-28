@@ -1,7 +1,8 @@
 import React from "react"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import CodingGuy from "@/Lottie-Files/CodingGuy.json"
 import Tilt from "@/components/Tilt";
+import Skills from "@/components/Skills";
+
+import CodingGuy from "@/Lottie-Files/CodingGuy.json"
 
 const About = () => {
     return (
@@ -22,8 +23,24 @@ const About = () => {
                 </div>
             </section>
 
-            <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] h-screen">
+            <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] min-h-screen">
                 <h2>Professional Skillset</h2>
+                <div className="skill-wrapper">
+                    <Skills icon='React' />
+                    <Skills icon='Node' />
+                    <Skills icon='Express' />
+                    <Skills icon='MongoDB' />
+                    <Skills icon='Git' />
+                    <Skills icon='Github' />
+                    <Skills icon='JavaScript' />
+                    <Skills icon='C++' />
+                    <Skills icon='Thunder Client' />
+                    <Skills icon='Figma' />
+                    <Skills icon='Vercel' />
+                    <Skills icon='Npm' />
+                    <Skills icon='Bootstrap' />
+                    <Skills icon='Tailwind' />
+                </div>
 
             </section>
         </div>
