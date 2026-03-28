@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link, useNavigate } from 'react-router-dom';
 // use your own icon import if react-icons is not available
@@ -118,6 +118,28 @@ const CardNav = ({
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  useEffect(() => {
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const clickedArea = target.closest(".card-nav-container");
+      if (!clickedArea && isExpanded) {
+        const tl = tlRef.current;
+        setIsHamburgerOpen(false);
+        if (!tl) {
+          setIsExpanded(false);
+          return;
+        }
+        tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
+        tl.reverse();
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, [isExpanded]);
 
   const toggleMenu = () => {

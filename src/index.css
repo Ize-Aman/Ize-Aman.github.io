@@ -22,13 +22,13 @@
   }
 
   p {
-    @apply font-medium text-[20px] leading-7.5;
+    @apply font-normal text-[19px] leading-7.5;
   }
 }
 
 @layer components {
   .wrapper {
-    @apply py-10;
+    @apply py-10 lg:pt-25;
   }
   /* lottie background styles */
   .lottie-bg {
@@ -60,7 +60,7 @@
 
   /* navbar styles */
   .nav-wrapper {
-    @apply fixed flex gap-9 min-[1025px]:gap-115 bg-[#03192600] py-3.75 z-99 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
+    @apply fixed flex gap-20 min-[1024px]:gap-90 min-[1101px]:gap-125 bg-[#03192600] py-3.75 z-99 font-normal text-[21px] w-full items-center justify-center backdrop-blur-[0] duration-650 ease-linear;
 
     & .links {
       & ul {
