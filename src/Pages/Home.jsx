@@ -42,7 +42,7 @@ const Home = () => {
                     </p>
                 </div>
                 <div>
-                    <Tilt image={"./Avatar.png"} width="w-55 md:w-70 lg:w-200" />
+                    <Tilt image={"./Avatar.png"} className="w-55 md:w-70 lg:w-200" />
                 </div>
             </section>
 

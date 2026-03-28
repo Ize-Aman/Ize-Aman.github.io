@@ -45,7 +45,7 @@ const Tilt = ({ image, width, data, ...rest }) => {
                         <img
                             src={image ?? "./Avatar.png"}
                             alt="Tiltable image"
-                            className={width}
+                            {...rest}
                         />
                     ) : (
                         <DotLottieReact data={data} {...rest} />
