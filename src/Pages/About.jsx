@@ -1,10 +1,29 @@
-import React from "react"
+import React, { useState } from "react"
 import Tilt from "@/components/Tilt";
 import Skills from "@/components/Skills";
 
 import CodingGuy from "@/Lottie-Files/CodingGuy.json"
 
 const About = () => {
+    const [activeSkill, setActiveSkill] = useState(null);
+
+    const skillIcons = [
+        'React',
+        'Node',
+        'Express',
+        'MongoDB',
+        'Git',
+        'Github',
+        'JavaScript',
+        'C++',
+        'Thunder Client',
+        'Figma',
+        'Vercel',
+        'Npm',
+        'Bootstrap',
+        'Tailwind'
+    ];
+
     return (
         <div className="wrapper">
             <section id="know-me" className="px-10 lg:px-35 min-h-screen not-lg:pt-15">
@@ -26,20 +45,14 @@ const About = () => {
             <section id="skillset" className="px-10 lg:px-35 lg:h-[70vh] min-h-screen">
                 <h2>Professional Skillset</h2>
                 <div className="skill-wrapper">
-                    <Skills icon='React' />
-                    <Skills icon='Node' />
-                    <Skills icon='Express' />
-                    <Skills icon='MongoDB' />
-                    <Skills icon='Git' />
-                    <Skills icon='Github' />
-                    <Skills icon='JavaScript' />
-                    <Skills icon='C++' />
-                    <Skills icon='Thunder Client' />
-                    <Skills icon='Figma' />
-                    <Skills icon='Vercel' />
-                    <Skills icon='Npm' />
-                    <Skills icon='Bootstrap' />
-                    <Skills icon='Tailwind' />
+                    {skillIcons.map((icon) => (
+                        <Skills
+                            key={icon}
+                            icon={icon}
+                            isActive={activeSkill === icon}
+                            onActivate={() => setActiveSkill(icon)}
+                        />
+                    ))}
                 </div>
 
             </section>

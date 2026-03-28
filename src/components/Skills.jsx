@@ -6,7 +6,7 @@ import { FaReact, FaGitAlt, FaGithub, FaNpm, FaFigma, FaBootstrap } from "react-
 import { DiJavascript1, DiNodejs } from "react-icons/di";
 import { SiExpress, SiMongodb, SiTailwindcss, SiVercel } from "react-icons/si";
 
-const Skills = ({ icon }) => {
+const Skills = ({ icon, isActive, onActivate }) => {
 
     const skills = {
         'C++': <CgCPlusPlus />,
@@ -27,7 +27,11 @@ const Skills = ({ icon }) => {
 
     return (
         <motion.div className="skill-box"
-            whileTap={{ scale: 1.2, boxShadow: "0 2px 8px 1px #431f47" }}
+            onTap={onActivate}
+            onClick={onActivate}
+            animate={
+                isActive ? { scale: 1.2, boxShadow: "0 2px 8px 1px #431f47" } : { scale: 1, boxShadow: "0 0 0 0 transparent" }
+            }
             whileHover={{ scale: 1.2, boxShadow: "0 2px 8px 1px #431f47" }}
             transition={{ duration: 0.3, ease: "linear" }}
         >
