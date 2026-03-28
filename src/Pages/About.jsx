@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Tilt from "@/components/Tilt";
 import Skills from "@/components/Skills";
 
-import CodingGuy from "@/Lottie-Files/CodingGuy.json";
 import MyCodder from "@/Lottie-Files/MyCodder.json";
 
 const About = () => {
@@ -41,7 +40,7 @@ const About = () => {
     ];
 
     return (
-        <div className="wrapper">
+        <div className="wrapper lg:pt-25">
             <section
                 id="know-me"
                 className="px-10 lg:px-35 min-h-screen not-lg:pt-15"
@@ -61,16 +60,20 @@ const About = () => {
                     </p>
                     <br />
                     <p>
-                        I primarily work with <span className="text-purple">JavaScript</span> and <span className="text-purple">react</span>, and recently I’ve been exploring
-                        <span className="text-purple"> Game Development</span> and building personal projects
-                        to improve my skills. I’m always looking for opportunities to learn
-                        new technologies and grow as a developer.
+                        I primarily work with{" "}
+                        <span className="text-purple">JavaScript</span> and{" "}
+                        <span className="text-purple">react</span>, and recently I’ve been
+                        exploring
+                        <span className="text-purple"> Game Development</span> and building
+                        personal projects to improve my skills. I’m always looking for
+                        opportunities to learn new technologies and grow as a developer.
                     </p>
                     <br />
                     <p>
                         Right now, my focus is on strengthening my software engineering
                         fundamentals, building meaningful projects, and expanding my
-                        knowledge in areas like <span className="text-purple">full-stack development</span>.
+                        knowledge in areas like{" "}
+                        <span className="text-purple">full-stack development</span>.
                     </p>
                     <br />
                     <p>

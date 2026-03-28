@@ -14,7 +14,7 @@
   }
 
   h1 {
-    @apply text-[30px] min-[500px]:text-[45px] font-bold text-left;
+    @apply text-[30px] min-[500px]:text-[40px] font-bold text-left;
   }
 
   h2 {
@@ -28,7 +28,7 @@
 
 @layer components {
   .wrapper {
-    @apply py-10 lg:pt-25;
+    @apply py-10;
   }
   /* lottie background styles */
   .lottie-bg {
