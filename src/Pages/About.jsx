@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Tilt from "@/components/Tilt";
 import Skills from "@/components/Skills";
 
@@ -6,6 +6,22 @@ import CodingGuy from "@/Lottie-Files/CodingGuy.json"
 
 const About = () => {
     const [activeSkill, setActiveSkill] = useState(null);
+
+    useEffect(() => {
+        const handlePointerDown = (event) => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+
+            const clickedSkillBox = target.closest(".skill-box");
+            if (!clickedSkillBox) {
+                setActiveSkill(null);
+            }
+        };
+
+        document.addEventListener("pointerdown", handlePointerDown);
+        return () => document.removeEventListener("pointerdown", handlePointerDown);
+
+    }, []);
 
     const skillIcons = [
         'React',

@@ -26,9 +26,8 @@ const Skills = ({ icon, isActive, onActivate }) => {
     }
 
     return (
-        <motion.div className="skill-box"
+        <motion.div className="skill-box" title={icon}
             onTap={onActivate}
-            onClick={onActivate}
             animate={
                 isActive ? { scale: 1.2, boxShadow: "0 2px 8px 1px #431f47" } : { scale: 1, boxShadow: "0 0 0 0 transparent" }
             }
