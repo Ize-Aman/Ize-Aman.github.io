@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 
-import FilmVault from "@/assets/FilmVault.png";
-import Checkers from "@/assets/Checkers.png";
-import Tindog from "@/assets/Tindog.png";
-
 const Projects = () => {
     const [activeProject, setActiveProject] = useState(null);
     useEffect(() => {
@@ -24,7 +20,7 @@ const Projects = () => {
 
     const projects = [
         {
-            image: "../src/assets/FilmVault.png",
+            image: "./FilmVault.png",
             title: "Film-Vault",
             description:
                 "A React movie discovery app that integrates the TMDB API to browse trending films, search titles, and view detailed movie information, with Firebase supporting backend functionality and a responsive user interface.",
@@ -33,7 +29,7 @@ const Projects = () => {
         },
 
         {
-            image: "../src/assets/Checkers.png",
+            image: "./Checkers.png",
             title: "Checkers",
             description:
                 "A classic checkers game built in C++ using the Raylib graphics library, featuring interactive piece movement, rule-based gameplay mechanics, and a simple graphical interface designed to recreate the traditional board game experience.",
@@ -42,7 +38,7 @@ const Projects = () => {
         },
 
         {
-            image: "../src/assets/Tindog.png",
+            image: "./Tindog.png",
             title: "Tindog",
             description:
                 "This project was built for learning purposes while following a web development course. It helped me understand how Bootstrap simplifies responsive design and speeds up front-end development.",
