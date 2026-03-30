@@ -21,10 +21,6 @@
     @apply text-[30px] min-[500px]:text-[35px] font-semibold text-left;
   }
 
-  h3 {
-    @apply font-bold text-[30px];
-  }
-
   p {
     @apply font-normal text-[19px] leading-7.5;
   }
@@ -154,16 +150,33 @@
     }
   }
 
+  /* projects page */
+
   #my-projects {
     @apply flex flex-col text-center items-center justify-evenly gap-25;
   }
 
   .project-wrapper {
-    @apply grid grid-cols-1 md:grid-cols-2 min-[1240px]:grid-cols-3 gap-12;
+    @apply grid grid-cols-1 min-[950px]:grid-cols-2 min-[1500px]:grid-cols-3 gap-12;
   }
 
   .projects-card {
-    @apply p-8 border-[3px] border-[#431f47] flex flex-col items-center min-[500px]:w-87.5;
+    @apply py-8 px-3 border-[3px] gap-12 border-[#431f47] flex flex-col items-center min-[420px]:w-98;
+  }
+
+  .project-info {
+    @apply flex flex-col gap-4 px-7;
+
+    & h3 {
+      @apply font-bold text-[20px];
+    }
+    & p {
+      @apply text-[18px];
+    }
+  }
+
+  .project-btn {
+    @apply cursor-pointer flex flex-row gap-2 items-center justify-evenly px-3 py-0.75 text-[20px] rounded-[5px] bg-[#431f47];
   }
 
   /* Footer */

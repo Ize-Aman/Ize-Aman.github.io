@@ -1,41 +1,86 @@
-import React from "react"
+import React, { useState, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 
-import FilmVault from '@/assets/FilmVault.png';
-import Checkers from '@/assets/Checkers.png';
-import Tindog from '@/assets/Tindog.png';
+import FilmVault from "@/assets/FilmVault.png";
+import Checkers from "@/assets/Checkers.png";
+import Tindog from "@/assets/Tindog.png";
 
 const Projects = () => {
+    const [activeProject, setActiveProject] = useState(null);
+    useEffect(() => {
+        const handlePointerDown = (event) => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+
+            const clickedProjectBox = target.closest(".project-box");
+            if (!clickedProjectBox) {
+                setActiveProject(null);
+            }
+        };
+
+        document.addEventListener("pointerdown", handlePointerDown);
+        return () => document.removeEventListener("pointerdown", handlePointerDown);
+    }, []);
+
     const projects = [
         {
-            title: 'Film-Vault',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam eaque non magnam eum provident, veritatis quod accusamus corrupti fuga, ratione quaerat modi facilis neque saepe. Corrupti repudiandae quaerat accusamus nulla.'
+            image: "../src/assets/FilmVault.png",
+            title: "Film-Vault",
+            description:
+                "A React movie discovery app that integrates the TMDB API to browse trending films, search titles, and view detailed movie information, with Firebase supporting backend functionality and a responsive user interface.",
+            github: "https://github.com/Ize-Aman/Film-Vault",
+            deployment: "https://movie-app-self-nu.vercel.app/"
         },
 
         {
-            title: 'Checkers',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laboriosam voluptatibus ad sed at maiores placeat molestiae autem, natus itaque suscipit fuga iste, expedita velit reiciendis libero perferendis molestias illo.'
+            image: "../src/assets/Checkers.png",
+            title: "Checkers",
+            description:
+                "A classic checkers game built in C++ using the Raylib graphics library, featuring interactive piece movement, rule-based gameplay mechanics, and a simple graphical interface designed to recreate the traditional board game experience.",
+            github: "https://github.com/Ize-Aman/Checkers",
+            deployment: ""
         },
 
         {
-            title: 'Tindog',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum omnis ipsam libero harum quidem vero est id rerum fuga? Libero voluptatem ex veniam! Officiis provident quod, quisquam placeat dolorem natus!'
-        }
+            image: "../src/assets/Tindog.png",
+            title: "Tindog",
+            description:
+                "This project was built for learning purposes while following a web development course. It helped me understand how Bootstrap simplifies responsive design and speeds up front-end development.",
+            github: "https://github.com/Ize-Aman/Tindog",
+            deployment: "https://ize-aman.github.io/Tindog/"
+        },
     ];
 
     return (
         <div className="wrapper pt-25 lg:pt-42.5">
-            <section id="my-projects" className="px-10 lg:px-35 min-h-screen not-lg:pt-15">
-                <h2>My <span className="text-purple">Projects</span></h2>
+            <section
+                id="my-projects"
+                className="px-10 lg:px-35 min-h-screen not-lg:pt-15"
+            >
+                <h2>
+                    My <span className="text-purple">Projects</span>
+                </h2>
 
                 <div className="project-wrapper">
-                    <ProjectCard image={FilmVault} projects={projects[0]} />
-                    <ProjectCard image={Checkers} projects={projects[1]} />
-                    <ProjectCard image={Tindog} projects={projects[2]} />
+                    <ProjectCard
+                        projects={projects[0]}
+                        isActive={activeProject === 0}
+                        onActivate={() => setActiveProject(0)}
+                    />
+                    <ProjectCard
+                        projects={projects[1]}
+                        isActive={activeProject === 1}
+                        onActivate={() => setActiveProject(1)}
+                    />
+                    <ProjectCard
+                        projects={projects[2]}
+                        isActive={activeProject === 2}
+                        onActivate={() => setActiveProject(2)}
+                    />
                 </div>
             </section>
         </div>
-    )
+    );
 };
 
 export default Projects;
