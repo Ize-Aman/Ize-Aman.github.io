@@ -23,7 +23,7 @@ const ProjectCard = ({ projects, isActive, onActivate }) => {
         <h3> {title} </h3>
         <p> {description} </p>
 
-        <div className="flex justify-around">
+        <div className="flex justify-around gap-10">
           <Button link={github} text="Github" icon={<FaGithub size={19} />} />
           {
             deployment ?
