@@ -5,8 +5,8 @@ import Button from "./Button";
 import { FaGithub } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
-const ProjectCard = ({ image, projects, isActive, onActivate }) => {
-  const { title, description, github, deployment } = projects
+const ProjectCard = ({ projects, isActive, onActivate }) => {
+  const { image, title, description, github, deployment } = projects
   return (
     <motion.div
       className="projects-card"
