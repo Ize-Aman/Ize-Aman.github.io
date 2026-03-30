@@ -161,7 +161,7 @@
   }
 
   .projects-card {
-    @apply py-8 px-3 border-[3px] gap-12 border-[#431f47] flex flex-col items-center min-[420px]:w-98;
+    @apply py-8 px-3 border-[3px] gap-12 border-[#431f47] flex flex-col items-center min-[420px]:w-98 leading-[22px];
   }
 
   .project-info {

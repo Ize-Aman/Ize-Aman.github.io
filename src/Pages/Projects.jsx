@@ -45,6 +45,14 @@ const Projects = () => {
             github: "https://github.com/Ize-Aman/Tindog",
             deployment: "https://ize-aman.github.io/Tindog/"
         },
+        {
+            image: "./Delivery.png",
+            title: "Food Delivery",
+            description:
+                "A full-stack food delivery management desktop application built with C# and a structured relational database. The system includes separate user and admin dashboards, enabling efficient management of restaurants, orders, and deliveries through a clean and organized interface.",
+            github: "https://github.com/Ize-Aman/FoodDelivery",
+            deployment: ""
+        },
     ];
 
     return (
@@ -72,6 +80,11 @@ const Projects = () => {
                         projects={projects[2]}
                         isActive={activeProject === 2}
                         onActivate={() => setActiveProject(2)}
+                    />
+                    <ProjectCard
+                        projects={projects[3]}
+                        isActive={activeProject === 0}
+                        onActivate={() => setActiveProject(0)}
                     />
                 </div>
             </section>
