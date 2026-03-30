@@ -1,4 +1,3 @@
-import Pdf from "@/components/pdf";
 import React from "react";
 
 
