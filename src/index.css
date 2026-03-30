@@ -21,6 +21,10 @@
     @apply text-[30px] min-[500px]:text-[35px] font-semibold text-left;
   }
 
+  h3 {
+    @apply font-bold text-[30px];
+  }
+
   p {
     @apply font-normal text-[19px] leading-7.5;
   }
@@ -137,15 +141,29 @@
   #skillset {
     @apply flex flex-col text-center items-center justify-evenly lg:justify-evenly;
   }
+
   .skill-wrapper {
     @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4.75 mt-6;
   }
+
   .skill-box {
     @apply border-[3px] border-[#431f47] rounded-[5px] p-6 sm:p-7 md:p-8 lg:p-10 flex items-center justify-center;
 
     & svg {
       @apply size-13.5 sm:size-13.5 md:size-14 lg:size-15;
     }
+  }
+
+  #my-projects {
+    @apply flex flex-col text-center items-center justify-evenly gap-25;
+  }
+
+  .project-wrapper {
+    @apply grid grid-cols-1 md:grid-cols-2 min-[1240px]:grid-cols-3 gap-12;
+  }
+
+  .projects-card {
+    @apply p-8 border-[3px] border-[#431f47] flex flex-col items-center min-[500px]:w-87.5;
   }
 
   /* Footer */
