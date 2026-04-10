@@ -43,7 +43,18 @@ const Resume = () => {
                                             documentId={activeDocumentId}
 
                                         >
-
+                                            <Scroller
+                                                documentId={activeDocumentId}
+                                                renderPage={({ height, pageIndex }) => (
+                                                    <div style={{ height }}>
+                                                        {/* The RenderLayer is responsible for drawing the page */}
+                                                        <RenderLayer
+                                                            documentId={activeDocumentId}
+                                                            pageIndex={pageIndex}
+                                                        />
+                                                    </div>
+                                                )}
+                                            />
                                         </Viewport>
                                     )
                                 }
