@@ -31,38 +31,40 @@ const Resume = () => {
 
     // 3. Wrap your UI with the <EmbedPDF> provider
     return (
-        <div style={{ height: '500px' }}>
-            <EmbedPDF engine={engine} plugins={plugins}>
-                {({ activeDocumentId }) =>
-                    activeDocumentId && (
-                        <DocumentContent documentId={activeDocumentId}>
-                            {({ isLoaded }) =>
-                                isLoaded && (
-                                    <Viewport
-                                        documentId={activeDocumentId}
-                                        style={{
-                                            backgroundColor: '#f1f3f5',
-                                        }}
-                                    >
-                                        <Scroller
+        <div className='wrapper'>
+            <section className='px-10 lg:px-35 min-h-screen not-lg:pt-15'>
+                <EmbedPDF engine={engine} plugins={plugins}>
+                    {({ activeDocumentId }) =>
+                        activeDocumentId && (
+                            <DocumentContent documentId={activeDocumentId}>
+                                {({ isLoaded }) =>
+                                    isLoaded && (
+                                        <Viewport
                                             documentId={activeDocumentId}
-                                            renderPage={({ width, height, pageIndex }) => (
-                                                <div style={{ width, height }}>
-                                                    {/* The RenderLayer is responsible for drawing the page */}
-                                                    <RenderLayer
-                                                        documentId={activeDocumentId}
-                                                        pageIndex={pageIndex}
-                                                    />
-                                                </div>
-                                            )}
-                                        />
-                                    </Viewport>
-                                )
-                            }
-                        </DocumentContent>
-                    )
-                }
-            </EmbedPDF>
+                                            style={{
+                                                backgroundColor: '#f1f3f5',
+                                            }}
+                                        >
+                                            <Scroller
+                                                documentId={activeDocumentId}
+                                                renderPage={({ width, height, pageIndex }) => (
+                                                    <div style={{ width, height }}>
+                                                        {/* The RenderLayer is responsible for drawing the page */}
+                                                        <RenderLayer
+                                                            documentId={activeDocumentId}
+                                                            pageIndex={pageIndex}
+                                                        />
+                                                    </div>
+                                                )}
+                                            />
+                                        </Viewport>
+                                    )
+                                }
+                            </DocumentContent>
+                        )
+                    }
+                </EmbedPDF>
+            </section>
         </div>
     );
 };
