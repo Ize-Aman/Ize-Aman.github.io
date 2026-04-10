@@ -32,7 +32,7 @@ const Resume = () => {
     // 3. Wrap your UI with the <EmbedPDF> provider
     return (
         <div className='wrapper'>
-            <section className='px-10 lg:px-35 min-h-screen not-lg:pt-15'>
+            <section className='px-10 lg:px-35 min-h-screen lg:pt-15'>
                 <EmbedPDF engine={engine} plugins={plugins}>
                     {({ activeDocumentId }) =>
                         activeDocumentId && (
@@ -41,9 +41,7 @@ const Resume = () => {
                                     isLoaded && (
                                         <Viewport
                                             documentId={activeDocumentId}
-                                            style={{
-                                                backgroundColor: '#f1f3f5',
-                                            }}
+
                                         >
                                             <Scroller
                                                 documentId={activeDocumentId}
