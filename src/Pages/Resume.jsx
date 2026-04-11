@@ -1,34 +1,37 @@
-import React, { useState } from 'react';
-import { BsDownload } from "react-icons/bs";
-import pdf from "@/assets/Resume.pdf";
-import { Document, Page, pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+import React from "react";
+import { pdfjs, Document, Page } from 'react-pdf';
+import { useState } from "react";
+import path from 'node:path';
+import fs from 'node:fs';
+import resume from '@/assets/Resume.pdf'
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.mjs',
+    import.meta.url,
+).toString();
+
+
 
 
 const Resume = () => {
-    const [wid, setwid] = useState(window.innerWidth);
+    const [numPages, setNumPages] = useState(0);
+    const [pageNumber, setPageNumber] = useState(1);
 
-    const handleResize = () => {
-        setwid(window.innerWidth);
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages)
     }
 
-    window.addEventListener("load", handleResize);
-    window.addEventListener("resize", handleResize);
-
     return (
-        <div className='ResumePage'>
-            <Document file={pdf} className="resumeview">
-                <Page pageNumber={1} scale={wid < 700 ? (wid > 475 ? 0.7 : 0.5) : 1} />
+        <div>
+            <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+                <Page pageNumber={pageNumber} />
             </Document>
 
-            <a href={pdf} target='_blank' download="Devansh's Resume">
-                <button className='downloadCV' type='button'>
-                    <h3><BsDownload />&nbsp; Download CV</h3>
-                </button>
-            </a>
-
+            <p>
+                Page {pageNumber} of {numPages}
+            </p>
         </div>
     )
-}
+};
 
-export default Resume
+export default Resume;
