@@ -24,8 +24,8 @@ const Resume = () => {
         wid < 500
             ? Math.min(wid - 28, 360)
             : wid < 768
-                ? Math.min(wid - 28, 360)
-                : Math.min(wid - 28, 360);
+                ? Math.min(wid - 40, 620)
+                : Math.min(wid - 40, 620);
 
     return (
         <section className="resume-page">
