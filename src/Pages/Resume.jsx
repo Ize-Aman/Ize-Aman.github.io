@@ -22,14 +22,14 @@ const Resume = () => {
     }
 
     return (
-        <div>
-            <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page pageNumber={pageNumber} />
-            </Document>
+        <div className="wrapper">
+            <section>
 
-            <p>
-                Page {pageNumber} of {numPages}
-            </p>
+                <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page pageNumber={pageNumber} />
+                </Document>
+
+            </section>
         </div>
     )
 };
