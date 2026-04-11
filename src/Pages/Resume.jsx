@@ -45,7 +45,7 @@ const Resume = () => {
             </div>
 
             <div className="resume-cta">
-                <Button link={'#'} icon={<BsDownload />} text={'Download CV'} />
+                <Button link={resume} icon={<BsDownload />} text={'Download CV'} download fileName="Resume.pdf" />
             </div>
         </section>
     )
