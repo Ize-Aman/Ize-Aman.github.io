@@ -32,20 +32,22 @@ const Resume = () => {
                 : Math.min(wid - 40, 620);
 
     return (
-        <section className="resume-page">
-            <div className="resume-shell">
-                <Document file={resume} loading="Loading resume...">
-                    <Page
-                        pageNumber={1}
-                        width={pageWidth}
-                        renderTextLayer={false}
-                        renderAnnotationLayer={false}
-                    />
-                </Document>
-            </div>
+        <div className="flex flex-col justify-center items-center pb-20">
+            <section className="resume-page">
+                <div className="resume-shell">
+                    <Document file={resume} loading="Loading resume...">
+                        <Page
+                            pageNumber={1}
+                            width={pageWidth}
+                            renderTextLayer={false}
+                            renderAnnotationLayer={false}
+                        />
+                    </Document>
+                </div>
 
+            </section>
             <Button link={'#'} icon={<BsDownload />} text={'Download CV'} />
-        </section>
+        </div>
     )
 };
 
