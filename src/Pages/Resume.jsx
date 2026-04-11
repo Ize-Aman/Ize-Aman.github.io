@@ -32,7 +32,7 @@ const Resume = () => {
                 : Math.min(wid - 40, 620);
 
     return (
-        <div className="flex flex-col justify-center items-center pb-20">
+        <div className="flex flex-col justify-center items-center">
             <section className="resume-page">
                 <div className="resume-shell">
                     <Document file={resume} loading="Loading resume...">
