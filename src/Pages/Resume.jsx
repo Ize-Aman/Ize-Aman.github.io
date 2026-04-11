@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { pdfjs, Document, Page } from 'react-pdf';
-import resume from '@/assets/Resume.pdf'
+
+import resume from '@/assets/Resume.pdf';
+
+import Button from '@/components/Button';
+import { BsDownload } from "react-icons/bs";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -39,6 +43,8 @@ const Resume = () => {
                     />
                 </Document>
             </div>
+
+            <Button link={'#'} icon={<BsDownload />} text={'Download CV'} />
         </section>
     )
 };

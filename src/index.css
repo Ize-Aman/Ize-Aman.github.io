@@ -194,7 +194,7 @@
   }
 
   .resume-shell {
-    @apply max-w-245 rounded-2xl border border-[#26465c] bg-transparent p-2 sm:p-3 md:p-2 shadow-[0_18px_55px_rgba(0,0,0,0.45)];
+    @apply max-w-245 rounded-2xl border border-[#26465c] bg-[#02131f]/75 p-2 sm:p-3 md:p-2 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-sm;
   }
 
   .resume-shell .react-pdf__Document,
