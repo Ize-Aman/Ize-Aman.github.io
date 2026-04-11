@@ -32,22 +32,22 @@ const Resume = () => {
                 : Math.min(wid - 40, 620);
 
     return (
-        <div className="flex flex-col justify-center items-center">
-            <section className="resume-page">
-                <div className="resume-shell">
-                    <Document file={resume} loading="Loading resume...">
-                        <Page
-                            pageNumber={1}
-                            width={pageWidth}
-                            renderTextLayer={false}
-                            renderAnnotationLayer={false}
-                        />
-                    </Document>
-                </div>
+        <section className="resume-page">
+            <div className="resume-shell">
+                <Document file={resume} loading="Loading resume...">
+                    <Page
+                        pageNumber={1}
+                        width={pageWidth}
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
+                    />
+                </Document>
+            </div>
 
-            </section>
-            <Button link={'#'} icon={<BsDownload />} text={'Download CV'} />
-        </div>
+            <div className="resume-cta">
+                <Button link={'#'} icon={<BsDownload />} text={'Download CV'} />
+            </div>
+        </section>
     )
 };
 
