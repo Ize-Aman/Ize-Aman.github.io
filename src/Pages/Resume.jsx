@@ -23,12 +23,10 @@ const Resume = () => {
 
     return (
         <div className="wrapper">
-            <section>
-
+            <section className="px-10 lg:px-35 min-h-screen lg:pt-15">
                 <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
                     <Page pageNumber={pageNumber} />
                 </Document>
-
             </section>
         </div>
     )
