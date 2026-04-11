@@ -1,8 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { pdfjs, Document, Page } from 'react-pdf';
-import { useState } from "react";
-import path from 'node:path';
-import fs from 'node:fs';
 import resume from '@/assets/Resume.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -14,29 +11,35 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 
 const Resume = () => {
-    const [wid, setwid] = useState(window.innerWidth);
+    const [wid, setWid] = useState(window.innerWidth);
 
-    const handleResize = () => {
-        setwid(window.innerWidth);
-    }
+    useEffect(() => {
+        const handleResize = () => setWid(window.innerWidth);
 
-    window.addEventListener("load", handleResize);
-    window.addEventListener("resize", handleResize);
-    const [numPages, setNumPages] = useState(0);
-    const [pageNumber, setPageNumber] = useState(1);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages)
-    }
+    const pageWidth =
+        wid < 500
+            ? Math.min(wid - 28, 360)
+            : wid < 768
+                ? Math.min(wid - 40, 620)
+                : Math.min(wid - 96, 920);
 
     return (
-        <div className="wrapper">
-            <section className="px-10 lg:px-35 min-h-screen lg:pt-15">
-                <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} scale={wid < 700 ? (wid > 475 ? 0.7 : 0.5) : 1} />
+        <section className="resume-page">
+            <div className="resume-shell">
+                <Document file={resume} loading="Loading resume...">
+                    <Page
+                        pageNumber={1}
+                        width={pageWidth}
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
+                    />
                 </Document>
-            </section>
-        </div>
+            </div>
+        </section>
     )
 };
 

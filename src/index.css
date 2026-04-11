@@ -187,6 +187,24 @@
       @apply flex gap-10;
     }
   }
+
+  /* resume page */
+  .resume-page {
+    @apply min-h-[100dvh] w-full px-3 pt-22 pb-4 sm:px-4 md:px-6 lg:px-8 flex items-start justify-center;
+  }
+
+  .resume-shell {
+    @apply w-full max-w-[980px] rounded-2xl border border-[#26465c] bg-[#02131f]/75 p-2 sm:p-3 md:p-4 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-sm;
+  }
+
+  .resume-shell .react-pdf__Document,
+  .resume-shell .react-pdf__Page {
+    @apply flex justify-center;
+  }
+
+  .resume-shell canvas {
+    @apply h-auto max-w-full rounded-xl;
+  }
 }
 
 @utility text-purple {
